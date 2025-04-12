@@ -1,11 +1,12 @@
 import victor.screenmatch.models.Filme;
+import victor.screenmatch.models.Serie;
 
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
-        meuFilme.nome = "O Poderoso Chefão";
-        meuFilme.anoDeLancamento = 1978;
-        meuFilme.duracaoEmMinutos = 180;
+        meuFilme.setNome("O Poderoso Chefão");
+        meuFilme.setAnoDeLancamento(1970);
+        meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(5);
@@ -16,5 +17,13 @@ public class Principal {
         System.out.println(meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
+        Serie serie = new Serie();
+        serie.setNome("Lost");
+        serie.setAnoDeLancamento(2010);
+
+        serie.setTemporadas(4);
+        serie.setEpisodiosPorTemporada(10);
+
+        serie.exibeFichaTecnica();
     }
 }
