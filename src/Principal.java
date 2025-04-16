@@ -23,6 +23,8 @@ public class Principal {
 
         serie.setTemporadas(4);
         serie.setEpisodiosPorTemporada(10);
+        serie.setMinutosPorEpisodio(50);
+        System.out.println("Tempo para maratonar a serie : " + serie.getDuracaoEmMinutos());
 
         serie.exibeFichaTecnica();
     }
