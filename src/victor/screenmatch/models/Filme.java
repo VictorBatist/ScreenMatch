@@ -1,13 +1,13 @@
 package victor.screenmatch.models;
 
 public class Filme extends Titulo {
-    private String direto;
+    private String diretor;
 
-    public String getDireto() {
-        return direto;
+    public String getDiretor() {
+        return diretor;
     }
 
-    public void setDireto(String direto) {
-        this.direto = direto;
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
     }
 }

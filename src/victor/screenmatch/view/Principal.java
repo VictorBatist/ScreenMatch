@@ -1,3 +1,6 @@
+package victor.screenmatch.view;
+
+import victor.screenmatch.calculation.CalculadoraDeTempo;
 import victor.screenmatch.models.Filme;
 import victor.screenmatch.models.Serie;
 
@@ -23,7 +26,20 @@ public class Principal {
 
         serie.setTemporadas(4);
         serie.setEpisodiosPorTemporada(10);
+        serie.setMinutosPorEpisodio(50);
+        System.out.println("Tempo para maratonar a serie : " + serie.getDuracaoEmMinutos());
 
         serie.exibeFichaTecnica();
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar o poder das aguas");
+        outroFilme.setAnoDeLancamento(2024);
+        outroFilme.setDuracaoEmMinutos(260);
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(serie);
+        System.out.println("Tempo total assistido: " + calculadora.getTempoTotal());
     }
 }
