@@ -1,6 +1,8 @@
 package victor.screenmatch.view;
 
 import victor.screenmatch.calculation.CalculadoraDeTempo;
+import victor.screenmatch.calculation.FiltroRecomendacao;
+import victor.screenmatch.models.Episodio;
 import victor.screenmatch.models.Filme;
 import victor.screenmatch.models.Serie;
 
@@ -41,5 +43,14 @@ public class Principal {
         calculadora.inclui(outroFilme);
         calculadora.inclui(serie);
         System.out.println("Tempo total assistido: " + calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumeroDeEpisodios(1);
+        episodio.setSerie(serie);
+        episodio.setTotalDeVisualizacoes(300);
+        filtro.filtra(episodio);
     }
 }
