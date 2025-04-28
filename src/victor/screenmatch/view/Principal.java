@@ -70,5 +70,6 @@ public class Principal {
         System.out.println("O primeiro filme é " + listaDeFilmes.get(0).getNome());
 
         System.out.println("lista de filmes: " + listaDeFilmes);
+        System.out.println("toString: " + listaDeFilmes.get(0).toString());
     }
 }
