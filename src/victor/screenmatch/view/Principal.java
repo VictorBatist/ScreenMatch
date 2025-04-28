@@ -6,6 +6,8 @@ import victor.screenmatch.models.Episodio;
 import victor.screenmatch.models.Filme;
 import victor.screenmatch.models.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -52,5 +54,21 @@ public class Principal {
         episodio.setSerie(serie);
         episodio.setTotalDeVisualizacoes(300);
         filtro.filtra(episodio);
+
+        var filmeDoJoao = new Filme();
+        filmeDoJoao.setNome("Waterworld - O segredo das aguas");
+        filmeDoJoao.setAnoDeLancamento(1995);
+        filmeDoJoao.setDuracaoEmMinutos(135);
+        filmeDoJoao.avalia(10);
+
+        ArrayList <Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoJoao);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+
+        System.out.println("Tamanho da lista " + listaDeFilmes.size());
+        System.out.println("O primeiro filme é " + listaDeFilmes.get(0).getNome());
+
+        System.out.println("lista de filmes: " + listaDeFilmes);
     }
 }
