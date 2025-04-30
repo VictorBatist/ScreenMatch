@@ -10,10 +10,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O Poderoso Chefão");
-        meuFilme.setAnoDeLancamento(1970);
-        meuFilme.setDuracaoEmMinutos(180);
+        Filme meuFilme = new Filme("O Poderoso Chefão",1970,180);
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(5);
@@ -35,10 +32,7 @@ public class Principal {
 
         serie.exibeFichaTecnica();
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar o poder das aguas");
-        outroFilme.setAnoDeLancamento(2024);
-        outroFilme.setDuracaoEmMinutos(260);
+        Filme outroFilme = new Filme("Avatar - o poder das aguas",2024,260);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(meuFilme);
@@ -55,10 +49,7 @@ public class Principal {
         episodio.setTotalDeVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var filmeDoJoao = new Filme();
-        filmeDoJoao.setNome("Waterworld - O segredo das aguas");
-        filmeDoJoao.setAnoDeLancamento(1995);
-        filmeDoJoao.setDuracaoEmMinutos(135);
+        var filmeDoJoao = new Filme("Waterworld - O segredo das aguas",1995,135);
         filmeDoJoao.avalia(10);
 
         ArrayList <Filme> listaDeFilmes = new ArrayList<>();
