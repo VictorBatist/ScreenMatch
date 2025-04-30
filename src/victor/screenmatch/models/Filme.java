@@ -5,6 +5,12 @@ import victor.screenmatch.calculation.Classificavel;
 public class Filme extends Titulo implements Classificavel {
     private String diretor;
 
+    public Filme(String nome,int anoLancamento, int duracaoEmMinutos){
+        this.setNome(nome);
+        this.setAnoDeLancamento(anoLancamento);
+        this.setDuracaoEmMinutos(duracaoEmMinutos);
+    }
+
     public String getDiretor() {
         return diretor;
     }
