@@ -8,6 +8,14 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
+    //contructor
+
+    public Titulo(String nome, int anoDeLancamento, int duracaoEmMinutos) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
     //getters
     public int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
