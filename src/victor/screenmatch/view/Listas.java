@@ -6,6 +6,7 @@ import victor.screenmatch.models.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Listas {
     public static void main(String[] args) {
@@ -43,9 +44,12 @@ public class Listas {
         Collections.sort(buscarPorAtor);
         System.out.println("\nApós uma ordenação:");
         System.out.println(buscarPorAtor);
-        System.out.println("Lista de Titulos ordenados");
+        System.out.println("\nLista de Titulos ordenados");
         Collections.sort(listaAssistidos);
         System.out.println(listaAssistidos);
 
+        listaAssistidos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("\nOrdenando por ano:");
+        System.out.println(listaAssistidos);
     }
 }
