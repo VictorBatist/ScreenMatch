@@ -54,4 +54,12 @@ public class Serie extends Titulo{
         System.out.println("duracao do filme em minutos " + getDuracaoEmMinutos());
     }
 
+    @Override
+    public String toString() {
+        return """
+               Serie: %s
+               Ano de lançamento: %d
+               
+               """.formatted(this.getNome(), this.getAnoDeLancamento());
+    }
 }
