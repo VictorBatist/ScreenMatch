@@ -5,6 +5,7 @@ import victor.screenmatch.models.Serie;
 import victor.screenmatch.models.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Listas {
     public static void main(String[] args) {
@@ -26,9 +27,25 @@ public class Listas {
 
         for(Titulo item : listaAssistidos){
             System.out.println(item.getNome());
-            Filme filme = (Filme) item;
-            System.out.println("Classificação: " + filme.getClassificacao() + " Estrelas" );
+            if(item instanceof Filme) {
+                Filme filme = (Filme) item;
+                System.out.println("Classificação: " + filme.getClassificacao() + " Estrelas" );
+            }
         }
+
+        ArrayList<String> buscarPorAtor = new ArrayList<>();
+        buscarPorAtor.add("Keanu Revees");
+        buscarPorAtor.add("Adam Sandler");
+        buscarPorAtor.add("Antonio Bandeiras");
+        buscarPorAtor.add("The Rock");
+        System.out.println(buscarPorAtor);
+
+        Collections.sort(buscarPorAtor);
+        System.out.println("\nApós uma ordenação:");
+        System.out.println(buscarPorAtor);
+        System.out.println("Lista de Titulos ordenados");
+        Collections.sort(listaAssistidos);
+        System.out.println(listaAssistidos);
 
     }
 }
