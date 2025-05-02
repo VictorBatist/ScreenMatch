@@ -59,6 +59,7 @@ public class Serie extends Titulo{
         return """
                Serie: %s
                Ano de lançamento: %d
+               
                """.formatted(this.getNome(), this.getAnoDeLancamento());
     }
 }

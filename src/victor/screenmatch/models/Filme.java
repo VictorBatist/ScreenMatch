@@ -28,6 +28,7 @@ public class Filme extends Titulo implements Classificavel {
         return """
                Filme: %s
                Ano de Lançamento: %d
+               
                """.formatted(this.getNome(),this.getAnoDeLancamento());
     }
 }

@@ -4,9 +4,7 @@ import victor.screenmatch.models.Filme;
 import victor.screenmatch.models.Serie;
 import victor.screenmatch.models.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class Listas {
     public static void main(String[] args) {
@@ -34,7 +32,7 @@ public class Listas {
             }
         }
 
-        ArrayList<String> buscarPorAtor = new ArrayList<>();
+        List<String> buscarPorAtor = new LinkedList<>();
         buscarPorAtor.add("Keanu Revees");
         buscarPorAtor.add("Adam Sandler");
         buscarPorAtor.add("Antonio Bandeiras");
