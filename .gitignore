@@ -30,4 +30,4 @@ bin/
 
 ### Package ##
 
-api.properties
+src/api/properties
