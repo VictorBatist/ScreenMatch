@@ -1,6 +1,8 @@
 package victor.screenmatch.view;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import victor.screenmatch.models.Titulo;
 import victor.screenmatch.models.TituloOmdb;
 
@@ -36,10 +38,12 @@ public class Buscas {
         String json = response.body();
         System.out.println(json);
 
-        Gson gson = new Gson();
-        //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
         TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
         System.out.println(meuTituloOmdb);
+        //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
 
 
     }
