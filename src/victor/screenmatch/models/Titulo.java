@@ -20,6 +20,12 @@ public class Titulo implements Comparable<Titulo> {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = Integer.parseInt(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.parseInt(meuTituloOmdb.runtime().substring(0,3));
+    }
+
     //getters
     public int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
@@ -81,6 +87,7 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public String toString() {
         return "nome='" + nome + '\'' +
-                ", anoDeLancamento=" + anoDeLancamento;
+                ", ano de lançamento=" + anoDeLancamento +
+                ", duração=" + duracaoEmMinutos;
     }
 }
