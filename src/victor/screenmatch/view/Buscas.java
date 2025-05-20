@@ -8,6 +8,7 @@ import victor.screenmatch.models.Titulo;
 import victor.screenmatch.models.TituloOmdb;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -51,6 +52,11 @@ public class Buscas {
             Titulo meuTitulo = new Titulo(meuTituloOmdb);
             System.out.println("Um titulo já convertido:");
             System.out.println(meuTitulo);
+
+            FileWriter escreverArquivo = new FileWriter("filmes.txt");
+            escreverArquivo.write(meuTitulo.toString());
+            escreverArquivo.close();
+
         }catch (NumberFormatException e){
             System.out.println("Aconteceu um erro:");
             System.out.println(e.getMessage());
