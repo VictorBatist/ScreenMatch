@@ -3,10 +3,12 @@ package victor.screenmatch.view;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import victor.screenmatch.exception.ErroDeConversaoDeAnoException;
 import victor.screenmatch.models.Titulo;
 import victor.screenmatch.models.TituloOmdb;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -27,7 +29,8 @@ public class Buscas {
         System.out.println("Digite um filme para busca:");
         var busca = scanner.nextLine();
 
-        String address = "http://www.omdbapi.com/?t=" + busca + line;
+        String address = "http://www.omdbapi.com/?t=" + busca.replace(" ", "+") + line;
+        System.out.println(address);
 
         try{
             HttpClient client = HttpClient.newHttpClient();
@@ -49,11 +52,18 @@ public class Buscas {
             Titulo meuTitulo = new Titulo(meuTituloOmdb);
             System.out.println("Um titulo já convertido:");
             System.out.println(meuTitulo);
+
+            FileWriter escreverArquivo = new FileWriter("filmes.txt");
+            escreverArquivo.write(meuTitulo.toString());
+            escreverArquivo.close();
+
         }catch (NumberFormatException e){
             System.out.println("Aconteceu um erro:");
             System.out.println(e.getMessage());
         }catch (IllegalArgumentException e){
             System.out.println("Aconteceu algum erro de argumento na busca, verifique o endereço");
+        }catch (ErroDeConversaoDeAnoException e){
+            System.out.println(e.getMessage());
         }
 
         System.out.println("O programa finalizou corretamente!");
