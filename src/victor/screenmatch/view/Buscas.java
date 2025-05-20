@@ -3,6 +3,7 @@ package victor.screenmatch.view;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import victor.screenmatch.exception.ErroDeConversaoDeAnoException;
 import victor.screenmatch.models.Titulo;
 import victor.screenmatch.models.TituloOmdb;
 
@@ -27,7 +28,8 @@ public class Buscas {
         System.out.println("Digite um filme para busca:");
         var busca = scanner.nextLine();
 
-        String address = "http://www.omdbapi.com/?t=" + busca + line;
+        String address = "http://www.omdbapi.com/?t=" + busca.replace(" ", "+") + line;
+        System.out.println(address);
 
         try{
             HttpClient client = HttpClient.newHttpClient();
@@ -54,6 +56,8 @@ public class Buscas {
             System.out.println(e.getMessage());
         }catch (IllegalArgumentException e){
             System.out.println("Aconteceu algum erro de argumento na busca, verifique o endereço");
+        }catch (ErroDeConversaoDeAnoException e){
+            System.out.println(e.getMessage());
         }
 
         System.out.println("O programa finalizou corretamente!");
